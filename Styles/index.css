@@ -13,12 +13,27 @@
 .main__sub-heading{
     font-size: 40px;
     font-weight: 400;
-    line-height: 48.41px;
-    text-align: left;
+    
     
 
 }
-.main{
-    padding: 150px;
+.menu path{
+    fill: var(--secondary_color);
 }
+.close path{
+    fill: var(--secondary_color);
+}
+@media(max-width:800px)
+{
+    .main__heading{
+        font-size: 46px;
+        line-height: 70px;
+    }
+    .main__sub-heading{
+        font-size: 20px;
+
+    }
+  
+}
+
 

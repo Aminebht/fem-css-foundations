@@ -1,6 +1,7 @@
 :root{
     --primary_color: #FF7B54;
     --secondary_color: #fff;
+    --third_color:#000;
     --color-button-border:var(--secondary_color);
     --color-button-primary-bg:var(--secondary_color);
     --color-button-primary-text:var(--primary_color);
@@ -11,16 +12,27 @@
 p{
     margin: 0;
 }
-body{
-    background-color: var(--primary_color);
+.body{
+   
     font-family: var(--font);
-    color: var(--secondary_color);
     margin: 0;
     padding: 0;
 }
+.body__primary{
+    background-color: var(--primary_color);
+    color: var(--secondary_color);
+}
+.body__secondary{
+    background-color: var(--secondary_color);
+    color:var(--primary_color);
+}
+
 a{
-    color: #fff;
+    color: inherit;
     text-decoration: none;
+}
+.main{
+    padding: 150px;
 }
 
 .header{
@@ -81,4 +93,66 @@ text-align: left;
 }
 .button-icon{
     vertical-align: middle;
+}
+.menu{
+    display: none;
+    cursor: pointer;
+}
+.close{
+    display: none;
+    cursor: pointer;
+}
+@media (max-width:800px){
+    .main{
+        padding:50px;
+    }
+    .button--container{
+        flex-wrap: wrap;
+    }
+    .button{
+        height: 80px;
+        padding: 0 32px;
+        font-size: 26px;
+        border:2px solid var(--color-button-border) ;
+        cursor: pointer;
+        transition: outline .2s linear;
+    }
+    .menu{
+        display: block;
+    }
+    .header{
+        display: grid;
+        grid-template-columns: 21px 1fr 34px ;
+        justify-items: center;
+    }
+    .nav{
+        position:absolute;
+        margin-top: 100px;
+        width: 100vw;
+        height: 100vh;
+        left: -120%;
+        background:var(--primary_color) ;
+        transition: left 0.2s ease-in-out;
+        
+        
+    }
+    .nav__list{
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        height: 80%;
+    }
+    .nav__list-item{
+        font-size: 80px;
+        font-weight: bold;
+    }
+    .nav--visible{
+        left: 0;
+    }
+    .body-no-scroll{
+        overflow: hidden;
+    }
+
+
+
 }
